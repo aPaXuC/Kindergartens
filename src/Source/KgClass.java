@@ -13,6 +13,10 @@ class KgClass {
 		kids = new ArrayList<>();
 	}
 
+	public int getClassNum() {
+		return classNum;
+	}
+
 	public boolean addKid(Kid kidToAdd) {
 		if (kids.size() < MAX_CAPACITY)
 			return kids.add(kidToAdd);

@@ -11,7 +11,7 @@ public class Kindergarten {
 
 	public Kindergarten(int numOfClasses) {
 		classes = new KgClass[numOfClasses];
-		kgID = nextID++;
+		kgID = ++nextID;
 		
 		for (int i = 0; i < numOfClasses; i++)
 			classes[i] = new KgClass(i+1);
@@ -19,8 +19,10 @@ public class Kindergarten {
 
 	public boolean addKid(Kid kidToAdd) {
 		for (KgClass cl : classes)
-			if (cl.addKid(kidToAdd))
+			if (cl.addKid(kidToAdd)) {
+				kidToAdd.setKgAndClassNumbers(kgID, cl.getClassNum());
 				return true;
+			}
 		return false;
 	}
 	
