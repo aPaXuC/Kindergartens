@@ -6,10 +6,13 @@ public class AnimalInheritanceTest {
 
 	@Test
 	public void test() {
-		Animal a1 = new Animal();
-		Animal a2 = new Animal();
-		assertEquals(a1, a2);
-        Cat cat = new Cat(false, "milk", 4, "black");
+		
+		Dog dog = new Dog("rexi", color, isHungry)
+        Cat cat1 = new Cat(false, "milk", 4, "black");
+        Cat cat2 = new Cat(false, "milk", 4, "white");
+        Cat cat3 = new Cat(false, "milk", 4, "brown");
+        Cat cat4 = new Cat(false, "milk", 4, "grey");
+
         assertTrue(cat instanceof Animal);
         assertFalse(cat.isVegetarian());
         for (int i = 8; i > 1; i--) {
