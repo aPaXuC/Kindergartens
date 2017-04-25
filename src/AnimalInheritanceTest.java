@@ -1,5 +1,7 @@
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.Test;
 
 public class AnimalInheritanceTest {
@@ -7,18 +9,18 @@ public class AnimalInheritanceTest {
 	@Test
 	public void test() {
 		
-		Dog dog = new Dog("rexi", color, isHungry)
-        Cat cat1 = new Cat(false, "milk", 4, "black");
-        Cat cat2 = new Cat(false, "milk", 4, "white");
-        Cat cat3 = new Cat(false, "milk", 4, "brown");
-        Cat cat4 = new Cat(false, "milk", 4, "grey");
-
-        assertTrue(cat instanceof Animal);
-        assertFalse(cat.isVegetarian());
-        for (int i = 8; i > 1; i--) {
-        	assertEquals(cat.soulLoss(), i);
+		ArrayList<Animal> cats = new ArrayList<>();
+		Dog dog = new Dog("rexi", "black", true);
+		assertTrue(cats.add(new Cat(false, "milk", 4, "black")));
+        assertTrue(cats.get(0) instanceof Animal);
+		assertTrue(cats.add(new Cat(false, "milk", 4, "white")));
+        assertTrue(cats.get(1) instanceof Cat);
+		assertTrue(cats.add(new Cat(false, "milk", 4, "brown")));
+        assertFalse(cats.get(2) instanceof Dog);
+        for (Animal c : cats) {
+        	assertTrue(dog.catchACat((Cat)c));
+        	assertEquals(((Cat) c).getSoulsLeft(), 8);
 		}
-    	assertEquals(cat.soulLoss(), 1);
 	}
 
 }

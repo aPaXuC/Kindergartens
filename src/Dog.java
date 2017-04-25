@@ -16,7 +16,7 @@ public class Dog extends Animal {
 	public boolean catchACat(Cat cat) {
 		if (cat == null) 
 			return false;
-		if (isHungry && cat.isVegetarian()) {
+		if (isHungry && !cat.isVegetarian()) {
 			cat.soulLoss();
 			return true;
 		}
