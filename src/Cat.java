@@ -22,5 +22,19 @@ public class Cat extends Animal {
 	public void setColor(String color) {
 		this.color = color;
 	}
+	
+	public int getSoulsLeft() {
+		return soulsLeft;
+	}
 
+	public void setSoulsLeft(int soulsLeft) {
+		this.soulsLeft = soulsLeft;
+	}
+
+	public int soulLoss() {
+		if (getSoulsLeft() > 0) {
+			setSoulsLeft(getSoulsLeft() - 1);
+		}
+		return getSoulsLeft();
+	}
 }
